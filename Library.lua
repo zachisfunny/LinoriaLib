@@ -2454,7 +2454,7 @@ function Library:CreateWindow(...)
     });
 
     Library:Create('UIListLayout', {
-        Padding = UDim.new(0, 0);
+        Padding = UDim.new(0, 5);
         FillDirection = Enum.FillDirection.Horizontal;
         SortOrder = Enum.SortOrder.LayoutOrder;
         Parent = TabArea;
