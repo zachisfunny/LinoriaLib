@@ -17,9 +17,11 @@ local Tabs = {
 
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('Groupbox')
 
+--[[ TabBox Example:
 local TabBox = Tabs.Main:AddLeftTabbox()
 
 local Tab1 = TabBox:AddTab('Tab 1')
+]]
 
 LeftGroupBox:AddToggle('MyToggle', {
     Text = 'This is a toggle',
@@ -28,7 +30,6 @@ LeftGroupBox:AddToggle('MyToggle', {
 })
 
 Toggles.MyToggle:OnChanged(function()
-    -- here we get our toggle object & then get its value
     print('MyToggle changed to:', Toggles.MyToggle.Value)
 end)
 
@@ -45,7 +46,9 @@ end)
 MyButton:AddTooltip('This is a button')
 MyButton2:AddTooltip('This is a sub button')
 
+--[[ Multi Options Button
 LeftGroupBox:AddButton('Kill all', Functions.KillAll):AddTooltip('This will kill everyone in the game!'):AddButton('Kick all', Functions.KickAll):AddTooltip('This will kick everyone in the game!')
+]]
 
 LeftGroupBox:AddLabel('This is a label')
 LeftGroupBox:AddLabel('This is a label\n\nwhich wraps its text!', true)
@@ -76,10 +79,10 @@ LeftGroupBox:AddInput('MyTextbox', {
     Finished = false, -- true / false, only calls callback when you press enter
 
     Text = 'This is a textbox',
-    Tooltip = 'This is a tooltip', -- Information shown when you hover over the textbox
+    Tooltip = 'This is a tooltip',
 
-    Placeholder = 'Placeholder text', -- placeholder text when the box is empty
-    -- MaxLength is also an option which is the max length of the text
+    Placeholder = 'Placeholder text',
+
 })
 
 Options.MyTextbox:OnChanged(function()
@@ -92,7 +95,7 @@ LeftGroupBox:AddDropdown('MyDropdown', {
     Multi = false, -- true / false, allows multiple choices to be selected
 
     Text = 'A dropdown',
-    Tooltip = 'This is a tooltip', -- Information shown when you hover over the textbox
+    Tooltip = 'This is a tooltip',
 })
 
 Options.MyDropdown:OnChanged(function()
@@ -156,8 +159,6 @@ Library:SetWatermarkVisibility(true)
 
 Library:SetWatermark('This is a really long watermark to text the resizing')
 
-Library.KeybindFrame.Visible = true;
-
 Library:OnUnload(function()
     print('Unloaded!')
     Library.Unloaded = true
@@ -168,6 +169,15 @@ local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 
 MenuGroup:AddButton('Unload', function() Library:Unload() end)
 MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'End', NoUI = false, Text = 'Menu keybind' }) 
+MenuGroup:AddToggle('kbframevisible', {
+    Text = 'Show Keybinds',
+    Default = true,
+    Tooltip = 'Shows your Keybinds',
+})
+
+Toggles.kbframevisible:OnChanged(function()
+Library.KeybindFrame.Visible = Toggles.kbframevisible.Value
+end)
 
 Library.ToggleKeybind = Options.MenuKeybind -- Allows you to have a custom keybind for the menu
 
