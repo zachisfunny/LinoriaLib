@@ -2008,7 +2008,7 @@ do
         function Dropdown:OpenDropdown()
             ListOuter.Visible = true;
             Library.OpenedFrames[ListOuter] = true;
-            DropdownArrow.Rotation = 90;
+            DropdownArrow.Rotation = 180;
         end;
 
         function Dropdown:CloseDropdown()
