@@ -1,10 +1,11 @@
---Settings | copy and paste [ UI Settings = Window:AddTab('UI Settings'), ] In your tabs for a UI Settings tab
+--Settings | copy and paste 'UISettings = Window:AddTab('UI Settings'),' (the stuff inside the '') In your tabs for a UI Settings tab, then copy all the stuff under
+--here and paste it into ur editor
 Library:OnUnload(function()
     print('Unloaded!')
     Library.Unloaded = true
 end)
 
-local MenuGroup = Tabs.UI Settings:AddLeftGroupbox('Menu')
+local MenuGroup = Tabs.UISettings:AddLeftGroupbox('Menu')
 
 MenuGroup:AddButton('Unload', function() Library:Unload() end)
 MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'End', NoUI = false, Text = 'Menu keybind' }) 
@@ -30,6 +31,6 @@ SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
 ThemeManager:SetFolder('MyScriptHub')
 SaveManager:SetFolder('MyScriptHub/specific-game')
 
-SaveManager:BuildConfigSection(Tabs['UI Settings']) 
+SaveManager:BuildConfigSection(Tabs.UISettings) 
 
-ThemeManager:ApplyToTab(Tabs['UI Settings'])
+ThemeManager:ApplyToTab(Tabs.UISettings)
