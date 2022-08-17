@@ -1,4 +1,4 @@
---Settings | Add [ UI Settings = Window:AddTab('UI Settings'), ] In your tabs for a UI Settings tab
+--Settings | copy and paste [ UI Settings = Window:AddTab('UI Settings'), ] In your tabs for a UI Settings tab
 Library:OnUnload(function()
     print('Unloaded!')
     Library.Unloaded = true
