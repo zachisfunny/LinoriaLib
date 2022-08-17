@@ -17,11 +17,50 @@ local Tabs = {
 
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('Groupbox')
 
---[[ TabBox Example:
-local TabBox = Tabs.Main:AddLeftTabbox()
+
+local TabBox = Tabs.Main:AddRightTabbox()
 
 local Tab1 = TabBox:AddTab('Tab 1')
-]]
+
+Tab1:AddToggle('MyToggle', {
+    Text = 'This is a toggle',
+    Default = true,
+    Tooltip = 'This is a tooltip',
+}):AddKeyPicker('KeyPicker', {
+
+    Default = 'MB2',
+    SyncToggleState = false, 
+        
+    Mode = 'Toggle', -- Modes: Always, Toggle, Hold
+        
+    Text = 'Fly',
+    NoUI = false,
+})
+
+Options.KeyPicker:OnClick(function()
+    print('Keybind clicked!', Options.KeyPicker.Value)
+end)
+
+Options.KeyPicker:SetValue({ 'E', 'Hold' })
+
+Toggles.MyToggle:OnChanged(function()
+    print('MyToggle changed to:', Toggles.MyToggle.Value)
+end)
+
+Toggles.MyToggle:SetValue(false)
+
+local Tab2 = TabBox:AddTab('Tab 2')
+
+Tab2:AddLabel('Color'):AddColorPicker('ColorPicker', {
+    Default = Color3.new(0, 1, 0), -- Bright green
+    Title = 'Some color', -- Optional. Allows you to have a custom color picker title (when you open it)
+})
+
+Options.ColorPicker:OnChanged(function()
+    print('Color changed!', Options.ColorPicker.Value)
+end)
+
+Options.ColorPicker:SetValueRGB(Color3.fromRGB(0, 255, 140))
 
 LeftGroupBox:AddToggle('MyToggle', {
     Text = 'This is a toggle',
@@ -45,10 +84,6 @@ end)
 
 MyButton:AddTooltip('This is a button')
 MyButton2:AddTooltip('This is a sub button')
-
---[[ Multi Options Button
-LeftGroupBox:AddButton('Kill all', Functions.KillAll):AddTooltip('This will kill everyone in the game!'):AddButton('Kick all', Functions.KickAll):AddTooltip('This will kick everyone in the game!')
-]]
 
 LeftGroupBox:AddLabel('This is a label')
 LeftGroupBox:AddLabel('This is a label\n\nwhich wraps its text!', true)
