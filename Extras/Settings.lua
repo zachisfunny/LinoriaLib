@@ -27,9 +27,9 @@ SaveManager:IgnoreThemeSettings()
 
 SaveManager:SetIgnoreIndexes({ 'MenuKeybind' }) 
 
-ThemeManager:SetFolder('foldername')
-SaveManager:SetFolder('foldername')
+ThemeManager:SetFolder('MyScriptHub')
+SaveManager:SetFolder('MyScriptHub/specific-game')
 
-SaveManager:BuildConfigSection(Tabs.UI Settings) 
+SaveManager:BuildConfigSection(Tabs['UI Settings']) 
 
-ThemeManager:ApplyToTab(Tabs.UI Settings)
+ThemeManager:ApplyToTab(Tabs['UI Settings'])
