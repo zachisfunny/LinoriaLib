@@ -1074,7 +1074,7 @@ do
             BackgroundColor3 = Library.MainColor;
             BorderColor3 = Library.OutlineColor;
             BorderMode = Enum.BorderMode.Inset;
-            Size = UDim2.new(0.5, 0, 0.5, 0);
+            Size = UDim2.new(1, 0, 1, 0);
             ZIndex = 6;
             Parent = ButtonOuter;
         });
