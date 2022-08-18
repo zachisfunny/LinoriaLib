@@ -1204,7 +1204,7 @@ do
         Library:AddToRegistry(DividerOuter, {
             BorderColor3 = 'Black';
         });
-
+        
         Library:AddToRegistry(DividerInner, {
             BackgroundColor3 = 'MainColor';
             BorderColor3 = 'OutlineColor';
