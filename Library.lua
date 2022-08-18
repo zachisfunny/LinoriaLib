@@ -1053,7 +1053,7 @@ do
         return Label;
     end;
 
-    function Funcs:AddButton(Text, Func)
+function Funcs:AddButton(Text, Func)
         local Button = {};
 
         local Groupbox = self;
@@ -1204,7 +1204,7 @@ do
         Library:AddToRegistry(DividerOuter, {
             BorderColor3 = 'Black';
         });
-        
+
         Library:AddToRegistry(DividerInner, {
             BackgroundColor3 = 'MainColor';
             BorderColor3 = 'OutlineColor';
