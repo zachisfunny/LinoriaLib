@@ -1061,7 +1061,7 @@ do
 
         local ButtonOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(1, -10, 0, 30);
+            Size = UDim2.new(1, -4, 0, 30);
             ZIndex = 5;
             Parent = Container;
         });
