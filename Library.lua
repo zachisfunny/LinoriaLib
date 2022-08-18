@@ -1187,7 +1187,7 @@ do
         Groupbox:AddBlank(2);
         local DividerOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
-            Size = UDim2.new(1, -4, 0, 5);
+            Size = UDim2.new(1, -4, 0, 3);
             ZIndex = 5;
             Parent = Container;
         });
