@@ -1094,7 +1094,7 @@ do
         });
 
         local ButtonLabel = Library:CreateLabel({
-            Size = UDim2.new(2, 0, 2, 0);
+            Size = UDim2.new(1, 0, 1, 0);
             TextSize = 14;
             Text = Text;
             ZIndex = 6;
@@ -1122,7 +1122,7 @@ do
         function Button:AddButton(Text, Func)
             local SubButton = {}
 
-            ButtonOuter.Size = UDim2.new(1, -2, 0, 20)
+            ButtonOuter.Size = UDim2.new(0.5, -2, 0, 20)
             
             local Outer = ButtonOuter:Clone()
             local Inner = Outer.Frame;
