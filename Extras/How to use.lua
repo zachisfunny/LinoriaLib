@@ -28,6 +28,9 @@ name:AddDivider()
 --Set anything to a certain value:
 Options/Toggles.name:SetValue({'Value', 'ValueTwo'})
 
+-- for a value do this
+Options/Toggles.ESp:SetValue(false)
+
 --New Left Group Box:
 local name = Tabs.Main:AddLeftGroupbox('')
 
