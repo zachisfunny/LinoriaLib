@@ -386,7 +386,6 @@ game.Players.PlayerAdded:connect(function(plr)
 end)
 
 --Basic ESP:
---Basic ESP:
         local esp_settings = { ---- table for esp settings 
         textsize = 10,
         colour = 0,255,255
