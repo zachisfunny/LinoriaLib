@@ -1,0 +1,1 @@
+local esp = loadstring(game:HttpGet(('https://raw.githubusercontent.com/zachisfunny/LinoriaLib/main/Extras/ESP/ESP.lua'),true))()
