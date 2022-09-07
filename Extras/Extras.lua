@@ -438,3 +438,15 @@ Text = "to make a notification"; -- what the text says (ofc)
 Icon = "rbxassetid://57254792"; -- change the image id to what u want if u want an image, if not, delete this row.
 Duration = 5; -- how long the notification show should in secounds
 })
+
+--Smooth Teleport:
+local cframe = CFrame.new(0,0,0)
+local speed = 1
+
+local ts = game:GetService('TweenService')
+char = game:GetService("Players").LocalPlayer.Character
+
+local part = char.HumanoidRootPart
+local ti = TweenInfo.new(speed, Enum.EasingStyle.Linear)
+local tp = {CFrame = cframe}
+ts:Create(part, ti, tp):Play()
