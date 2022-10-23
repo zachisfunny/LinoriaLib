@@ -2920,7 +2920,7 @@ function Library:CreateWindow(...)
             if Input.UserInputType == Enum.UserInputType.Keyboard and Input.KeyCode.Name == Library.ToggleKeybind.Value then
                 task.spawn(Library.Toggle)
             end
-        elseif Input.KeyCode == Enum.KeyCode.End or Enum.KeyCode.RightAlt or (Input.KeyCode == Enum.KeyCode.End and (not Processed)) then
+        elseif Input.KeyCode == Enum.KeyCode.RightAlt or (Input.KeyCode == Enum.KeyCode.End and (not Processed)) then
             task.spawn(Library.Toggle)
         end
     end))
