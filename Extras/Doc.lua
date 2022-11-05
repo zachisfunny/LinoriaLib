@@ -12,9 +12,7 @@ local Window = Library:CreateWindow({
 })
 
 --New Tab:
-local Tabs = {
-    Main = Window:AddTab('Main'), 
-}
+Main = Window:AddTab('Main'), 
 
 --Add a tooltip:
 name:AddTooltip('')
