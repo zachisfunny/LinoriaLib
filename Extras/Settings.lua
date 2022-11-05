@@ -1,11 +1,10 @@
---Settings | copy and paste 'UISettings = Window:AddTab('UI Settings'),' (the stuff inside the '') In your tabs for a UI Settings tab, then copy all the stuff under
---here and paste it into ur editor
+UISettings = Window:AddTab('UI Settings')
 Library:OnUnload(function()
     print('Unloaded!')
     Library.Unloaded = true
 end)
 
-local MenuGroup = Tabs.UISettings:AddLeftGroupbox('Menu')
+local MenuGroup = UISettings:AddLeftGroupbox('Menu')
 
 MenuGroup:AddButton('Unload', function() Library:Unload() end)
 MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'End', NoUI = false, Text = 'Menu keybind' }) 
